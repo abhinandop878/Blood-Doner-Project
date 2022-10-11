@@ -8,6 +8,8 @@ import { SearchDonerComponent } from './search-doner/search-doner.component';
 import { DeleteDonerComponent } from './delete-doner/delete-doner.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ViewAllComponent } from './view-all/view-all.component';
+import {HttpClientModule} from '@angular/common/http';
 const appRoutes:Routes=[
 {
   path:"",component:AddDonerComponent
@@ -17,6 +19,9 @@ const appRoutes:Routes=[
 },
 {
   path:"deleteDoner",component:DeleteDonerComponent
+},
+{
+  path:"view-all",component:ViewAllComponent
 }
 ]
 @NgModule({
@@ -25,12 +30,14 @@ const appRoutes:Routes=[
     AddDonerComponent,
     SearchDonerComponent,
     DeleteDonerComponent,
-    NavbarComponent
+    NavbarComponent,
+    ViewAllComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
